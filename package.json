@@ -1,0 +1,36 @@
+{
+  "name": "ninjagoat-multipage",
+  "version": "0.1.0",
+  "dependencies": {
+    "inversify": "^4.3.0",
+    "lodash": "^4.17.4",
+    "qs": "^6.5.1",
+    "rx": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/expect.js": "0.3.29",
+    "@types/leaflet": "~1.0.58",
+    "@types/lodash": "4.14.64",
+    "@types/mocha": "2.2.41",
+    "@types/qs": "^6.5.1",
+    "@types/sinon": "~1.16.33",
+    "browser-env": "2.0.31",
+    "expect.js": "0.3.1",
+    "prettygoat-testing": "^3.0.0",
+    "sinon": "~1.17.3",
+    "typemoq": "1.5.0"
+  },
+  "peerDependencies": {
+    "ninjagoat": "^2.8.3",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "reflect-metadata": "0.1.3"
+  },
+  "scripts": {
+    "clean": "smild clean",
+    "build": "smild build",
+    "test": "smild test"
+  },
+  "main": "dist/index.js",
+  "typings": "dist"
+}
