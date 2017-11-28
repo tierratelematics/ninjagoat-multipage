@@ -22,7 +22,7 @@ Create a MultiPage viewmodel
 import { ViewModel } from "ninjagoat";
 import { MultiPageViewModel } from "ninjagoat-multipage";
 
-type Model = {count : number};
+type Model = {counter : number};
 
 @ViewModel("Test")
 class TestViewModel extends MultiPageViewModel<Model> {}
@@ -33,7 +33,7 @@ And its pages viewmodels
 ```typescript
 import { ViewModel, ObservableViewModel } from "ninjagoat";
 
-type Model = {count : number};
+type Model = {counter : number};
 
 @ViewModel("Page")
 class PageViewModel extends MultiPageViewModel<Model> {}

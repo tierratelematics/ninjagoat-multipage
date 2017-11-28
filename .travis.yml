@@ -1,0 +1,20 @@
+language: node_js
+node_js:
+  - "6"
+install:
+  - npm install smild@4.8.1 -g
+  - npm install -g npm-install-peers
+  - npm install npm-install-peers
+  - npm install
+script:
+  - smild test
+  - smild build
+deploy:
+  skip_cleanup: true
+  provider: npm
+  email: sysadmin@tierratelematics.com
+  api_key:
+    secure: eOqH/XHqswAtbkzIF55JPgjDjJVfHtAhyBDsI0gGl4sAHiOhxjnUF+yt3t7FDUVym/8I409YnCL3N6EoitZFKItHOmKfYXlaEqt5+DpVMLIl7AYD2VOcHBzqTjscnDxX8asxib6cDbjtXPgqbSUlhPZw5eT4ASoGyyD6rJtcc5FDmduHvjFb/NvZVCECqbW4yhUKE8xqUB0XaW0xZCiGa9vBSgrzdBMeHIN/HviKCp14tHYlqh0vL3COcTDZ+aPsQAGVg2yiW+XV7+eKw/F0zSCrymcJ0Oog/Mh8or6sI/ov85ptZDJrRwIB+PMGZcnLF/QGXpFSRgI3Ntu/Uv20DfuCbZGVWRPMSlMob7buH1eBJXI+y4DHdyc0fCiWX4mLCBIbL9CM1b/MIudlXUN+Tic5K7YtTy5TeD338jl6DZbN5g7DoPqXiqD05TVKIFfbqn4YwlxAqF6C46/ovfqonXgrq3lVaRfa5RpXuwv7I1B+/aQmG8IvVkcfEg3yXLAk2fK21unzjBw99mi642Tqco6+YX54UUHM4QTdIPqkUOeHJnoWYFAyUNQ3kJloPSDDhMTKmdTCy8RLb9BYZWCqwriGdRHZqM71ByN3mKkUFOaiL2qkF7hVCE5cviJOsl7ye1DIzE0dFTDgeth7y+69gJGgDfYgnPmPb0duWqZms5Q=
+  on:
+    repo: tierratelematics/ninjagoat-multipage
+    tags: true
