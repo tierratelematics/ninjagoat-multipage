@@ -1,0 +1,27 @@
+{
+    "compilerOptions": {
+        "lib": [
+            "es5",
+            "dom",
+            "es6"
+        ],
+        "target": "es5",
+        "jsx": "react",
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "module": "commonjs",
+        "types": [
+            "mocha",
+            "reflect-metadata",
+            "node"
+        ],
+        "declaration": true,
+        "baseUrl": "."
+    },
+    "typeAcquisition": {
+        "enable": true,
+        "include": [
+            "./node_modules/rx/ts/rx.all.d.ts"
+        ]
+    }
+}
