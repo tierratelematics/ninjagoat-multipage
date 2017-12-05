@@ -1,11 +1,11 @@
 import { inject, injectable, interfaces } from "inversify";
 import { RegistryEntry, Dictionary, IViewModel, ViewModelContext, ViewModelUtil, IViewModelRegistry, ILogger, LoggingContext } from "ninjagoat";
 
-import { IMultiPageRegistry, IPagesRetriever } from "../registry/IMultiPageRegistry";
+import { IMultiPageRegistry, IMultiPageRegistryGetter } from "../registry/IMultiPageRegistry";
 
 @injectable()
 @LoggingContext("MultiPageRegistry")
-export class MultiPageRegistry implements IMultiPageRegistry, IPagesRetriever {
+export class MultiPageRegistry implements IMultiPageRegistry, IMultiPageRegistryGetter {
     private unregistered: Dictionary<RegistryEntry<any>> = {};
     private pages: Dictionary<Dictionary<RegistryEntry<any>>> = {};
     @inject("ILogger") private logger: ILogger;

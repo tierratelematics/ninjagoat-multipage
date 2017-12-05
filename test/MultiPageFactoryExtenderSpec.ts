@@ -4,17 +4,17 @@ import { IMock, Mock, Times, It } from "typemoq";
 import { ViewModelContext, ObservableViewModel, Dictionary, IViewModelFactory, RegistryEntry, Screen, IObjectContainer } from "ninjagoat";
 
 import { MockViewModel } from "./fixtures/MockViewModel";
-import { IPagesRetriever } from "scripts/registry/IMultiPageRegistry";
+import { IMultiPageRegistryGetter } from "scripts/registry/IMultiPageRegistry";
 import { MultiPageFactoryExtender } from "../scripts/multipage/MultiPageFactoryExtender";
 import { MockPageViewModel, AnotherMockPageViewModel } from "./fixtures/MockPageViewModel";
-import { IParametersUpdater } from "scripts/parameters/IParametersUpdater";
+import { IMultiPageParametersUpdater } from "scripts/parameters/IMultiPageParametersUpdater";
 
 describe("The MultiPageFactoryExtender", () => {
     let subject: MultiPageFactoryExtender;
-    let registry: IMock<IPagesRetriever>;
+    let registry: IMock<IMultiPageRegistryGetter>;
     let factory: IMock<IViewModelFactory>;
     let container: IMock<IObjectContainer>;
-    let updater: IMock<IParametersUpdater>;
+    let updater: IMock<IMultiPageParametersUpdater>;
     let page: RegistryEntry<any>;
     let anotherPage: RegistryEntry<any>;
 
@@ -26,7 +26,7 @@ describe("The MultiPageFactoryExtender", () => {
         page = Screen.forViewModel(MockPageViewModel);
         anotherPage = Screen.forViewModel(AnotherMockPageViewModel);
 
-        registry = Mock.ofType<IPagesRetriever>();
+        registry = Mock.ofType<IMultiPageRegistryGetter>();
         registry.setup(r => r.pagesFor(It.isValue(mainContext))).returns(() => ({
             "Page": page,
             "AnotherPage": anotherPage
@@ -41,7 +41,7 @@ describe("The MultiPageFactoryExtender", () => {
         container = Mock.ofType<IObjectContainer>();
         container.setup(c => c.get<any>(It.isAny())).returns(() => factory.object);
 
-        updater = Mock.ofType<IParametersUpdater>();
+        updater = Mock.ofType<IMultiPageParametersUpdater>();
 
         subject = new MultiPageFactoryExtender(registry.object, container.object, updater.object);
     });

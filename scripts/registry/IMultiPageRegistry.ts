@@ -6,6 +6,6 @@ export interface IMultiPageRegistry {
     forViewModel(construct: interfaces.Newable<IViewModel<any>>): void;
 }
 
-export interface IPagesRetriever {
+export interface IMultiPageRegistryGetter {
     pagesFor(context: ViewModelContext): Dictionary<RegistryEntry<any>>;
 }

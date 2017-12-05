@@ -3,16 +3,16 @@ import { injectable, inject } from "inversify";
 import { IViewModelFactoryExtender, ViewModelContext, IViewModelFactory, IObjectContainer } from "ninjagoat";
 
 import { MultiPageViewModel } from "./MultiPageViewModel";
-import { IPagesRetriever } from "../registry/IMultiPageRegistry";
-import { IParametersUpdater } from "dist/parameters/IParametersUpdater";
+import { IMultiPageRegistryGetter } from "../registry/IMultiPageRegistry";
+import { IMultiPageParametersUpdater } from "../parameters/IMultiPageParametersUpdater";
 
 @injectable()
 export class MultiPageFactoryExtender implements IViewModelFactoryExtender {
     private factory: IViewModelFactory;
 
-    constructor( @inject("IPagesRetriever") private registry: IPagesRetriever,
+    constructor( @inject("IMultiPageRegistryGetter") private registry: IMultiPageRegistryGetter,
         @inject("IObjectContainer") private container: IObjectContainer,
-        @inject("IParametersUpdater") private updater: IParametersUpdater) { }
+        @inject("IMultiPageParametersUpdater") private updater: IMultiPageParametersUpdater) { }
 
     extend<T>(viewmodel: T & MultiPageViewModel, context: ViewModelContext, source: any) {
         if (!viewmodel.goToPage) return;

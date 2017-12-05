@@ -1,10 +1,10 @@
-import { stringify, parse } from "qs";
 import { merge } from "lodash";
+import { stringify, parse } from "qs";
 import { injectable } from "inversify";
-import { IParametersUpdater } from "./IParametersUpdater";
+import { IMultiPageParametersUpdater } from "./IMultiPageParametersUpdater";
 
 @injectable()
-export class ParametersUpdater implements IParametersUpdater {
+export class MultiPageParametersUpdater implements IMultiPageParametersUpdater {
     update(parameters: any): void {
         let { protocol, host, pathname, search } = location;
         let url = `${protocol}//${host}${pathname}?${stringify(merge({}, parse(search.substring(1)), parameters))}`;
