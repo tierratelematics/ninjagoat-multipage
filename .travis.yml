@@ -4,7 +4,7 @@ node_js:
 install:
   - npm install smild@4.8.1 -g
   - npm install -g npm-install-peers
-  - npm install npm-install-peers
+  - npm-install-peers
   - npm install
 script:
   - smild test

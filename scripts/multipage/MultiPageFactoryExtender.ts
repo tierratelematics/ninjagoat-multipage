@@ -4,7 +4,7 @@ import { IViewModelFactoryExtender, ViewModelContext, IViewModelFactory, IObject
 
 import { MultiPageViewModel } from "./MultiPageViewModel";
 import { IPagesRetriever } from "../registry/IMultiPageRegistry";
-import { IParametersUpdater } from "dist/parameters/IParametersUpdater";
+import { IParametersUpdater } from "../parameters/IParametersUpdater";
 
 @injectable()
 export class MultiPageFactoryExtender implements IViewModelFactoryExtender {
