@@ -1,6 +1,6 @@
 {
   "name": "ninjagoat-multipage",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "dependencies": {
     "inversify": "^4.3.0",
     "lodash": "^4.17.4",
