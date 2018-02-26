@@ -15,8 +15,7 @@
             "reflect-metadata",
             "node"
         ],
-        "declaration": true,
-        "baseUrl": "."
+        "declaration": true
     },
     "typeAcquisition": {
         "enable": true,
