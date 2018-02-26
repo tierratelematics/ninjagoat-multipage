@@ -4,10 +4,10 @@ import { IMock, Mock, Times, It } from "typemoq";
 import { ViewModelContext, ObservableViewModel, Dictionary, IViewModelFactory, RegistryEntry, Screen, IObjectContainer } from "ninjagoat";
 
 import { MockViewModel } from "./fixtures/MockViewModel";
-import { IMultiPageRegistryGetter } from "scripts/registry/IMultiPageRegistry";
+import { IMultiPageRegistryGetter } from "../scripts/registry/IMultiPageRegistry";
 import { MultiPageFactoryExtender } from "../scripts/multipage/MultiPageFactoryExtender";
 import { MockPageViewModel, AnotherMockPageViewModel } from "./fixtures/MockPageViewModel";
-import { IMultiPageParametersUpdater } from "scripts/parameters/IMultiPageParametersUpdater";
+import { IMultiPageParametersUpdater } from "../scripts/parameters/IMultiPageParametersUpdater";
 
 describe("The MultiPageFactoryExtender", () => {
     let subject: MultiPageFactoryExtender;
